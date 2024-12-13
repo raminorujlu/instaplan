@@ -31,11 +31,11 @@ const ActivityForm = ({ onActivityAdded }: FormProps) => {
 
   return (
     <form
-      className="flex flex-col gap-y-2 items-end bg-gray-200 w-1/2 rounded-2xl shadow-gray-700/50 shadow-lg p-4"
+      className="flex flex-col bg-zinc-50 shadow-indigo-700/30 shadow-lg gap-y-2 items-end border border-indigo-600/20 w-4/5 lg:w-1/2 rounded-2xl p-4"
       onSubmit={handleSubmit}
     >
       <input
-        className="bg-transparent border border-gray-500 p-2 rounded-md focus:outline-none w-full"
+        className="bg-transparent border border-indigo-600 text-indigo-600 p-2 rounded-md focus:outline-none w-full"
         placeholder="Enter your name"
         type="text"
         value={userName}
@@ -44,14 +44,14 @@ const ActivityForm = ({ onActivityAdded }: FormProps) => {
       />
       <input
         type="text"
-        className="bg-transparent border border-gray-500 p-2 rounded-md focus:outline-none w-full"
+        className="bg-transparent border border-indigo-600 text-indigo-600 p-2 rounded-md focus:outline-none w-full"
         placeholder="Enter the activity title"
         value={activityTitle}
         onChange={(e) => setActivityTitle(e.target.value)}
         required
       />
       <button
-        className="bg-blue-600 text-white rounded-lg cursor-pointer px-6 py-2 hover:bg-blue-700 duration-150 active:scale-95"
+        className="bg-[#63e] text-white rounded-lg cursor-pointer px-6 py-2 hover:bg-violet-800 duration-150 active:scale-95"
         type="submit"
       >
         Add Activity

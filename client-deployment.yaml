@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: instaplan-client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: instaplan-client
+  template:
+    metadata:
+      labels:
+        app: instaplan-client
+    spec:
+      containers:
+      - name: instaplan-client
+        image: instaplan-client:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: instaplan-client-service
+spec:
+  selector:
+    app: instaplan-client
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
